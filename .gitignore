@@ -18,5 +18,9 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 
+## Xcode Patch
+.DS_Store
+*.orig
+
 # CocoaPods
 Pods/

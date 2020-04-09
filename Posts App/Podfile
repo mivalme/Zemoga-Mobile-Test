@@ -1,0 +1,15 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '12.0'
+
+target 'Posts App' do
+
+  use_frameworks!
+
+  # Pods for Posts App
+  pod 'lottie-ios'
+
+  target 'Posts AppTests' do
+    inherit! :search_paths
+  end
+
+end

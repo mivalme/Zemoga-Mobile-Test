@@ -29,6 +29,17 @@
 		255EFBD124412EA400438951 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBD024412EA400438951 /* UIView+Utils.swift */; };
 		255EFBD82441370400438951 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBD72441370400438951 /* EndPointType.swift */; };
 		255EFBDA2441375900438951 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBD92441375900438951 /* HTTPMethod.swift */; };
+		255EFBDC2441386F00438951 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBDB2441386F00438951 /* HTTPTask.swift */; };
+		255EFBDE244138F000438951 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBDD244138F000438951 /* NetworkRouter.swift */; };
+		255EFBE02441392000438951 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBDF2441392000438951 /* Router.swift */; };
+		255EFBE224413BF100438951 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBE124413BF100438951 /* ParameterEncoder.swift */; };
+		255EFBE424413C4300438951 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBE324413C4300438951 /* URLParameterEncoder.swift */; };
+		255EFBE624413C7A00438951 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBE524413C7A00438951 /* JSONParameterEncoder.swift */; };
+		255EFBE824413D8C00438951 /* DefaultNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBE724413D8C00438951 /* DefaultNetworkManager.swift */; };
+		255EFBEE2441434300438951 /* PostsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBED2441434300438951 /* PostsAPI.swift */; };
+		255EFBF02441435C00438951 /* PostsNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBEF2441435C00438951 /* PostsNetworkManager.swift */; };
+		255EFBF2244144D300438951 /* getPostsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBF1244144D300438951 /* getPostsUseCase.swift */; };
+		255EFBF4244144F000438951 /* getPostCommentsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBF3244144F000438951 /* getPostCommentsUseCase.swift */; };
 		25829866243FC8D10053AD37 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25829865243FC8D10053AD37 /* Storyboarded.swift */; };
 		25829868243FC9240053AD37 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25829867243FC9240053AD37 /* Storyboards.swift */; };
 		E717D2E4A5D098FBDFDCC83E /* Pods_Posts_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD4FA9D81E697817D15900B /* Pods_Posts_AppTests.framework */; };
@@ -73,6 +84,17 @@
 		255EFBD024412EA400438951 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		255EFBD72441370400438951 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		255EFBD92441375900438951 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		255EFBDB2441386F00438951 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		255EFBDD244138F000438951 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		255EFBDF2441392000438951 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		255EFBE124413BF100438951 /* ParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
+		255EFBE324413C4300438951 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		255EFBE524413C7A00438951 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		255EFBE724413D8C00438951 /* DefaultNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkManager.swift; sourceTree = "<group>"; };
+		255EFBED2441434300438951 /* PostsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsAPI.swift; sourceTree = "<group>"; };
+		255EFBEF2441435C00438951 /* PostsNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsNetworkManager.swift; sourceTree = "<group>"; };
+		255EFBF1244144D300438951 /* getPostsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getPostsUseCase.swift; sourceTree = "<group>"; };
+		255EFBF3244144F000438951 /* getPostCommentsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getPostCommentsUseCase.swift; sourceTree = "<group>"; };
 		25829865243FC8D10053AD37 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		25829867243FC9240053AD37 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		2C1CAF1FE39BBD94A5BFB7B2 /* Pods-Posts AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Posts AppTests.release.xcconfig"; path = "Target Support Files/Pods-Posts AppTests/Pods-Posts AppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +221,9 @@
 			children = (
 				255EFBD72441370400438951 /* EndPointType.swift */,
 				255EFBD92441375900438951 /* HTTPMethod.swift */,
+				255EFBDB2441386F00438951 /* HTTPTask.swift */,
+				255EFBDD244138F000438951 /* NetworkRouter.swift */,
+				255EFBDF2441392000438951 /* Router.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -206,6 +231,9 @@
 		255EFBD4244136D700438951 /* Encoding */ = {
 			isa = PBXGroup;
 			children = (
+				255EFBE124413BF100438951 /* ParameterEncoder.swift */,
+				255EFBE324413C4300438951 /* URLParameterEncoder.swift */,
+				255EFBE524413C7A00438951 /* JSONParameterEncoder.swift */,
 			);
 			path = Encoding;
 			sourceTree = "<group>";
@@ -213,6 +241,7 @@
 		255EFBD5244136E900438951 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				255EFBE724413D8C00438951 /* DefaultNetworkManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -220,8 +249,44 @@
 		255EFBD6244136F100438951 /* EndPoint */ = {
 			isa = PBXGroup;
 			children = (
+				255EFBE92441417C00438951 /* Posts */,
 			);
 			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		255EFBE92441417C00438951 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				255EFBEC2441433200438951 /* API */,
+				255EFBEB2441432800438951 /* Manager */,
+				255EFBEA2441431900438951 /* UseCases */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		255EFBEA2441431900438951 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				255EFBF1244144D300438951 /* getPostsUseCase.swift */,
+				255EFBF3244144F000438951 /* getPostCommentsUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		255EFBEB2441432800438951 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				255EFBEF2441435C00438951 /* PostsNetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		255EFBEC2441433200438951 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				255EFBED2441434300438951 /* PostsAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		2582985B243FC4910053AD37 /* Modules */ = {
@@ -511,17 +576,28 @@
 				255EFBCB2441254400438951 /* PostTableViewCell.swift in Sources */,
 				25829868243FC9240053AD37 /* Storyboards.swift in Sources */,
 				2550A517243FB8820005549F /* AppDelegate.swift in Sources */,
+				255EFBE224413BF100438951 /* ParameterEncoder.swift in Sources */,
 				255EFBB0243FCE1400438951 /* PostsListProtocols.swift in Sources */,
+				255EFBF4244144F000438951 /* getPostCommentsUseCase.swift in Sources */,
+				255EFBE824413D8C00438951 /* DefaultNetworkManager.swift in Sources */,
 				255EFBB6243FCE8A00438951 /* BaseViewController.swift in Sources */,
 				255EFBD124412EA400438951 /* UIView+Utils.swift in Sources */,
 				255EFBBC243FFF5900438951 /* ZemogaThemeColors.swift in Sources */,
 				255EFBCE24412DF600438951 /* PostsListViewController+UITableView.swift in Sources */,
+				255EFBE424413C4300438951 /* URLParameterEncoder.swift in Sources */,
+				255EFBF02441435C00438951 /* PostsNetworkManager.swift in Sources */,
 				255EFBAA243FCB7000438951 /* PostsListViewController.swift in Sources */,
+				255EFBF2244144D300438951 /* getPostsUseCase.swift in Sources */,
+				255EFBE02441392000438951 /* Router.swift in Sources */,
+				255EFBDC2441386F00438951 /* HTTPTask.swift in Sources */,
 				255EFBDA2441375900438951 /* HTTPMethod.swift in Sources */,
 				2550A521243FB8820005549F /* Posts_App.xcdatamodeld in Sources */,
 				25829866243FC8D10053AD37 /* Storyboarded.swift in Sources */,
+				255EFBE624413C7A00438951 /* JSONParameterEncoder.swift in Sources */,
+				255EFBDE244138F000438951 /* NetworkRouter.swift in Sources */,
 				255EFBBF2440048F00438951 /* LocalizableStrings.swift in Sources */,
 				255EFBB4243FCE2A00438951 /* PostsListInteractor.swift in Sources */,
+				255EFBEE2441434300438951 /* PostsAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

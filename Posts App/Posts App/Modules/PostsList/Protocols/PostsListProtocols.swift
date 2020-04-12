@@ -9,15 +9,16 @@
 import Foundation
 
 protocol PostsListInteractorProtocol {
-    
+    func fetchPosts()
 }
 
 protocol PostsListPresenterProtocol {
-    
+    func viewDidLoad()
 }
 
 protocol PostsListInteractorOutputProtocol: class {
-    
+    func fetchedPostsSuccess(model: [PostsListModel.Post])
+    func fetchedPostsFailure(errorMessage: String)
 }
 
 protocol PostsListRouterProtocol {
@@ -25,5 +26,5 @@ protocol PostsListRouterProtocol {
 }
 
 protocol PostsListViewProtocol: class {
-    
+    func displayPostsList(mdoel: [PostsListModel.Post])
 }

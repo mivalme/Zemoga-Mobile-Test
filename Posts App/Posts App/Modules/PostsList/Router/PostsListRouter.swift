@@ -11,7 +11,7 @@ import Foundation
 class PostsListRouter: PostsListRouterProtocol {
     weak var viewController: BaseViewController?
     
-    static func createPendingsModule() -> PostsListViewController {
+    static func createModule() -> PostsListViewController {
         let ref = PostsListViewController.instantiate(from: .PostsList)
         let presenter = PostsListPresenter()
         

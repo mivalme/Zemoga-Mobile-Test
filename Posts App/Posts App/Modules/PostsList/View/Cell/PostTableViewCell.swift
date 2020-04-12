@@ -9,6 +9,8 @@
 import UIKit
 
 class PostTableViewCell: UITableViewCell {
+    
+    @IBOutlet private weak var titleLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +21,10 @@ class PostTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setUpCell(model: PostsListModel.Post) {
+        titleLabel.text = model.title
     }
     
 }

@@ -15,10 +15,12 @@ class PostsListViewController: BaseViewController {
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var postsTableView: UITableView!
     
+    var postsListDataSource: [PostsListModel.Post]?
     let postCellHeight: CGFloat = 70
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewDidLoad()
         setupUI()
     }
     
@@ -38,9 +40,11 @@ class PostsListViewController: BaseViewController {
         self.segmentedControl.setTitleTextAttributes([.foregroundColor : UIColor.white], for: .selected)
         self.segmentedControl.setTitleTextAttributes([.foregroundColor : ZemogaThemeColors.CustomGreen ?? UIColor.black], for: .normal)
     }
-
 }
 
 extension PostsListViewController: PostsListViewProtocol {
-    
+    func displayPostsList(mdoel: [PostsListModel.Post]) {
+        self.postsListDataSource = mdoel
+        self.postsTableView.reloadData()
+    }
 }

@@ -13,8 +13,17 @@ class PostsListPresenter: PostsListPresenterProtocol {
     var router: PostsListRouterProtocol?
     var interactor: PostsListInteractorProtocol?
     
+    func viewDidLoad() {
+        interactor?.fetchPosts()
+    }
 }
 
 extension PostsListPresenter: PostsListInteractorOutputProtocol {
+    func fetchedPostsSuccess(model: [PostsListModel.Post]) {
+        view?.displayPostsList(mdoel: model)
+    }
     
+    func fetchedPostsFailure(errorMessage: String) {
+        
+    }
 }

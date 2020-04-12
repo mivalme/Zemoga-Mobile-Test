@@ -17,7 +17,7 @@ protocol EndPointType {
 
 extension EndPointType {
     private var environmentBaseURL: URL {
-        return URL(string: "https://jsonplaceholder.typicode.com/")!
+        return URL(string: "https://jsonplaceholder.typicode.com")!
     }
     
     var baseURL: URL {

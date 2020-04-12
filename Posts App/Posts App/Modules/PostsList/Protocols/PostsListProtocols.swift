@@ -14,6 +14,7 @@ protocol PostsListInteractorProtocol {
 
 protocol PostsListPresenterProtocol {
     func viewDidLoad()
+    func didSelectPost(selectedPost: PostsListModel.Post)
 }
 
 protocol PostsListInteractorOutputProtocol: class {
@@ -22,7 +23,7 @@ protocol PostsListInteractorOutputProtocol: class {
 }
 
 protocol PostsListRouterProtocol {
-    
+    func goToPostDetail(selectedPost: PostDetailModel.Post)
 }
 
 protocol PostsListViewProtocol: class {

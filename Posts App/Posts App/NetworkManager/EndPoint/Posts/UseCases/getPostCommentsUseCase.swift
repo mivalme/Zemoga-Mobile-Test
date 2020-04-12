@@ -20,6 +20,6 @@ struct GetPostCommentsUseCase {
         var id: Int
         var name: String
         var email: String
-        var bodoy: String
+        var body: String
     }
 }

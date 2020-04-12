@@ -11,7 +11,7 @@ import Foundation
 class PostDetailRouter: PostDetailRouterProtocol {
     weak var viewController: BaseViewController?
     
-    static func createModule() -> PostDetailViewController {
+    static func createModule(selectedPost: PostDetailModel.Post) -> PostDetailViewController {
         let ref = PostDetailViewController.instantiate(from: .PostDetail)
         let presenter = PostDetailPresenter()
         
@@ -24,6 +24,7 @@ class PostDetailRouter: PostDetailRouterProtocol {
         presenter.view = ref
         presenter.router = router
         presenter.interactor = interactor
+        presenter.selectedPost = selectedPost
         
         ref.presenter = presenter
         return ref

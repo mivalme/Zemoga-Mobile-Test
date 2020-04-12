@@ -8,3 +8,10 @@
 
 //MARK: - Posts List
 "PostList.title" = "Posts";
+
+//MARK: - Post Detail
+"PostDetail.title" = "Post";
+"PostDetail.User.name" = "Name: %@";
+"PostDetail.User.email" = "Email: %@";
+"PostDetail.User.phone" = "Phone: %@";
+"PostDetail.User.website" = "Website: %@";

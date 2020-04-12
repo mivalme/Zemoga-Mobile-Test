@@ -41,4 +41,9 @@ extension PostsListViewController: UITableViewDelegate, UITableViewDataSource  {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let selectedPost = postsListDataSource?[indexPath.row] else { return }
+        self.presenter?.didSelectPost(selectedPost: selectedPost)
+    }
 }

@@ -13,8 +13,30 @@ class PostDetailPresenter: PostDetailPresenterProtocol {
     var router: PostDetailRouterProtocol?
     var interactor: PostDetailInteractorProtocol?
     
+    var selectedPost: PostDetailModel.Post?
+    
+    func viewDidLoad() {
+        guard let selectedPost = self.selectedPost else { return }
+        view?.displayPostData(post: selectedPost)
+        interactor?.fetchUser(userId: selectedPost.userId)
+        interactor?.fetchPostComments(postId: selectedPost.id)
+    }
 }
 
 extension PostDetailPresenter: PostDetailInteractorOutputProtocol {
+    func fetchedUserSuccess(userModel: PostDetailModel.User) {
+        view?.displayUserData(user: userModel)
+    }
     
+    func fetchedUserFailure(errorMessage: String) {
+        
+    }
+    
+    func fetchedPostCommentsSuccess(commentsModel: [PostDetailModel.Comment]) {
+        view?.displayPostCommentsData(postComments: commentsModel)
+    }
+    
+    func fetchedPostCommentsFailure(errorMessage: String) {
+        
+    }
 }

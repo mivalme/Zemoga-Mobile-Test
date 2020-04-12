@@ -28,4 +28,9 @@ class PostsListRouter: PostsListRouterProtocol {
         ref.presenter = presenter
         return ref
     }
+    
+    func goToPostDetail(selectedPost: PostDetailModel.Post) {
+        let postDetailViewController = PostDetailRouter.createModule(selectedPost: selectedPost)
+        self.viewController?.navigationController?.pushViewController(postDetailViewController, animated: true)
+    }
 }

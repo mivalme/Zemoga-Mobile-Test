@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(rootViewController: initialViewController)
         /* Setup custom navigation bar*/
         navigationController.navigationBar.barTintColor = ZemogaThemeColors.CustomGreen
+        navigationController.navigationBar.tintColor = UIColor.white
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
         /* Setting up the root view-controller as ui-navigation-controller */

@@ -16,6 +16,14 @@ class PostsListPresenter: PostsListPresenterProtocol {
     func viewDidLoad() {
         interactor?.fetchPosts()
     }
+    
+    func didSelectPost(selectedPost: PostsListModel.Post) {
+        let selectedPost = PostDetailModel.Post(userId: selectedPost.userId,
+                                                id: selectedPost.id,
+                                                title: selectedPost.title,
+                                                body: selectedPost.body)
+        router?.goToPostDetail(selectedPost: selectedPost)
+    }
 }
 
 extension PostsListPresenter: PostsListInteractorOutputProtocol {

@@ -9,7 +9,6 @@
 import UIKit
 
 class PostsListViewController: BaseViewController {
-    
     var presenter: PostsListPresenterProtocol?
     
     @IBOutlet private weak var segmentedControl: UISegmentedControl!

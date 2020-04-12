@@ -40,6 +40,13 @@
 		255EFBF02441435C00438951 /* PostsNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBEF2441435C00438951 /* PostsNetworkManager.swift */; };
 		255EFBF2244144D300438951 /* getPostsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBF1244144D300438951 /* getPostsUseCase.swift */; };
 		255EFBF4244144F000438951 /* getPostCommentsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBF3244144F000438951 /* getPostCommentsUseCase.swift */; };
+		255EFBF62442618200438951 /* PostsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBF52442618200438951 /* PostsListModel.swift */; };
+		255EFBFF2443B70800438951 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBFE2443B70800438951 /* PostDetailViewController.swift */; };
+		255EFC012443B71100438951 /* PostDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 255EFC002443B71100438951 /* PostDetail.storyboard */; };
+		255EFC032443B73300438951 /* PostDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFC022443B73300438951 /* PostDetailRouter.swift */; };
+		255EFC052443B73E00438951 /* PostDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFC042443B73E00438951 /* PostDetailProtocols.swift */; };
+		255EFC072443B74700438951 /* PostDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFC062443B74700438951 /* PostDetailPresenter.swift */; };
+		255EFC092443B75100438951 /* PostDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFC082443B75100438951 /* PostDetailInteractor.swift */; };
 		25829866243FC8D10053AD37 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25829865243FC8D10053AD37 /* Storyboarded.swift */; };
 		25829868243FC9240053AD37 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25829867243FC9240053AD37 /* Storyboards.swift */; };
 		E717D2E4A5D098FBDFDCC83E /* Pods_Posts_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD4FA9D81E697817D15900B /* Pods_Posts_AppTests.framework */; };
@@ -95,6 +102,13 @@
 		255EFBEF2441435C00438951 /* PostsNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsNetworkManager.swift; sourceTree = "<group>"; };
 		255EFBF1244144D300438951 /* getPostsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getPostsUseCase.swift; sourceTree = "<group>"; };
 		255EFBF3244144F000438951 /* getPostCommentsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getPostCommentsUseCase.swift; sourceTree = "<group>"; };
+		255EFBF52442618200438951 /* PostsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListModel.swift; sourceTree = "<group>"; };
+		255EFBFE2443B70800438951 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		255EFC002443B71100438951 /* PostDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostDetail.storyboard; sourceTree = "<group>"; };
+		255EFC022443B73300438951 /* PostDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailRouter.swift; sourceTree = "<group>"; };
+		255EFC042443B73E00438951 /* PostDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailProtocols.swift; sourceTree = "<group>"; };
+		255EFC062443B74700438951 /* PostDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailPresenter.swift; sourceTree = "<group>"; };
+		255EFC082443B75100438951 /* PostDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailInteractor.swift; sourceTree = "<group>"; };
 		25829865243FC8D10053AD37 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		25829867243FC9240053AD37 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		2C1CAF1FE39BBD94A5BFB7B2 /* Pods-Posts AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Posts AppTests.release.xcconfig"; path = "Target Support Files/Pods-Posts AppTests/Pods-Posts AppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -289,10 +303,72 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		255EFBF72443B41B00438951 /* PostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				255EFBFD2443B46000438951 /* Entity */,
+				255EFBFC2443B45900438951 /* Interactor */,
+				255EFBFB2443B45400438951 /* Presenter */,
+				255EFBFA2443B44F00438951 /* Protocols */,
+				255EFBF92443B44B00438951 /* Router */,
+				255EFBF82443B44700438951 /* View */,
+			);
+			path = PostDetail;
+			sourceTree = "<group>";
+		};
+		255EFBF82443B44700438951 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				255EFBFE2443B70800438951 /* PostDetailViewController.swift */,
+				255EFC002443B71100438951 /* PostDetail.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		255EFBF92443B44B00438951 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				255EFC022443B73300438951 /* PostDetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		255EFBFA2443B44F00438951 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				255EFC042443B73E00438951 /* PostDetailProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		255EFBFB2443B45400438951 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				255EFC062443B74700438951 /* PostDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		255EFBFC2443B45900438951 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				255EFC082443B75100438951 /* PostDetailInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		255EFBFD2443B46000438951 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		2582985B243FC4910053AD37 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				2582985C243FC5580053AD37 /* PostsList */,
+				255EFBF72443B41B00438951 /* PostDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -356,6 +432,7 @@
 		25829862243FC8230053AD37 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				255EFBF52442618200438951 /* PostsListModel.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -486,6 +563,7 @@
 				255EFBC72440058D00438951 /* Localizable.strings in Resources */,
 				255EFBAC243FCCB100438951 /* PostsList.storyboard in Resources */,
 				255EFBB8243FFE6900438951 /* Colors.xcassets in Resources */,
+				255EFC012443B71100438951 /* PostDetail.storyboard in Resources */,
 				255EFBCC2441254400438951 /* PostTableViewCell.xib in Resources */,
 				2550A526243FB8840005549F /* LaunchScreen.storyboard in Resources */,
 				2550A523243FB8840005549F /* Assets.xcassets in Resources */,
@@ -577,15 +655,20 @@
 				25829868243FC9240053AD37 /* Storyboards.swift in Sources */,
 				2550A517243FB8820005549F /* AppDelegate.swift in Sources */,
 				255EFBE224413BF100438951 /* ParameterEncoder.swift in Sources */,
+				255EFBFF2443B70800438951 /* PostDetailViewController.swift in Sources */,
 				255EFBB0243FCE1400438951 /* PostsListProtocols.swift in Sources */,
 				255EFBF4244144F000438951 /* getPostCommentsUseCase.swift in Sources */,
+				255EFBF62442618200438951 /* PostsListModel.swift in Sources */,
 				255EFBE824413D8C00438951 /* DefaultNetworkManager.swift in Sources */,
 				255EFBB6243FCE8A00438951 /* BaseViewController.swift in Sources */,
 				255EFBD124412EA400438951 /* UIView+Utils.swift in Sources */,
 				255EFBBC243FFF5900438951 /* ZemogaThemeColors.swift in Sources */,
+				255EFC092443B75100438951 /* PostDetailInteractor.swift in Sources */,
 				255EFBCE24412DF600438951 /* PostsListViewController+UITableView.swift in Sources */,
 				255EFBE424413C4300438951 /* URLParameterEncoder.swift in Sources */,
+				255EFC072443B74700438951 /* PostDetailPresenter.swift in Sources */,
 				255EFBF02441435C00438951 /* PostsNetworkManager.swift in Sources */,
+				255EFC052443B73E00438951 /* PostDetailProtocols.swift in Sources */,
 				255EFBAA243FCB7000438951 /* PostsListViewController.swift in Sources */,
 				255EFBF2244144D300438951 /* getPostsUseCase.swift in Sources */,
 				255EFBE02441392000438951 /* Router.swift in Sources */,
@@ -594,6 +677,7 @@
 				2550A521243FB8820005549F /* Posts_App.xcdatamodeld in Sources */,
 				25829866243FC8D10053AD37 /* Storyboarded.swift in Sources */,
 				255EFBE624413C7A00438951 /* JSONParameterEncoder.swift in Sources */,
+				255EFC032443B73300438951 /* PostDetailRouter.swift in Sources */,
 				255EFBDE244138F000438951 /* NetworkRouter.swift in Sources */,
 				255EFBBF2440048F00438951 /* LocalizableStrings.swift in Sources */,
 				255EFBB4243FCE2A00438951 /* PostsListInteractor.swift in Sources */,

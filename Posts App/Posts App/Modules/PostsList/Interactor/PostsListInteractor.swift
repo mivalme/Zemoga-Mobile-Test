@@ -30,7 +30,7 @@ class PostsListInteractor: PostsListInteractorProtocol {
                                                    id: $0.1.id,
                                                    title: $0.1.title,
                                                    body: $0.1.body,
-                                                   read: ($0.0 > 20),
+                                                   read: ($0.0 >= 20),
                                                    favorite: false)
                     model.append(post)
                 })

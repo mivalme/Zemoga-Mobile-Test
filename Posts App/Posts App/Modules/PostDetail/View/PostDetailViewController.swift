@@ -20,6 +20,8 @@ class PostDetailViewController: BaseViewController {
     
     let postCommentCellHeight: CGFloat = 82
     var postCommentsDataSource: [PostDetailModel.Comment]?
+    let favoriteButton = UIButton()
+    private var favoriteState: Bool?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,25 @@ class PostDetailViewController: BaseViewController {
     
     private func setupUI() {
         setUpTableView()
+        addFavoriteButton()
         self.title = LocalizableStrings.PostDetail.title
+    }
+    
+    private func addFavoriteButton() {
+        favoriteButton.addTarget(self, action: #selector(favoriteButtonAction), for: .touchUpInside)
+        favoriteButton.setImage(ZemogaThemeImages.favoriteIcon?.withRenderingMode(.alwaysTemplate), for: .normal)
+        favoriteButton.tintColor = favoriteState ?? false ? ZemogaThemeColors.favoriteYellow : UIColor.white
+        favoriteButton.translatesAutoresizingMaskIntoConstraints = false
+        favoriteButton.widthAnchor.constraint(equalToConstant: 32).isActive = true
+        favoriteButton.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: favoriteButton)
+    }
+    
+    @objc private func favoriteButtonAction() {
+        favoriteState?.toggle()
+        guard let favoriteState = self.favoriteState else { return }
+        favoriteButton.tintColor = favoriteState ? ZemogaThemeColors.favoriteYellow : UIColor.white
+        presenter?.favoriteButtonTapped(favoriteState: favoriteState)
     }
 
 }
@@ -37,6 +57,7 @@ class PostDetailViewController: BaseViewController {
 extension PostDetailViewController: PostDetailViewProtocol {
     func displayPostData(post: PostDetailModel.Post) {
         bodyLabel.text = post.body
+        favoriteState = post.favorite
     }
     
     func displayUserData(user: PostDetailModel.User) {

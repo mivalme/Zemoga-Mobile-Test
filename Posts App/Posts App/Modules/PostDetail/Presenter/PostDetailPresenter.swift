@@ -16,11 +16,17 @@ class PostDetailPresenter: PostDetailPresenterProtocol {
     var selectedPost: PostDetailModel.Post?
     
     func viewDidLoad() {
-        guard var selectedPost = self.selectedPost else { return }
+        self.selectedPost?.read = true
+        guard let selectedPost = self.selectedPost else { return }
         view?.displayPostData(post: selectedPost)
         interactor?.fetchUser(userId: selectedPost.userId)
         interactor?.fetchPostComments(postId: selectedPost.id)
-        selectedPost.read = true
+        interactor?.updatePost(post: selectedPost)
+    }
+    
+    func favoriteButtonTapped(favoriteState: Bool) {
+        self.selectedPost?.favorite = favoriteState
+        guard let selectedPost = self.selectedPost else { return }
         interactor?.updatePost(post: selectedPost)
     }
 }

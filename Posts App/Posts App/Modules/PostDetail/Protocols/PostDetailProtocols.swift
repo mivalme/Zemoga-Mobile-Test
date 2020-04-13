@@ -17,6 +17,7 @@ protocol PostDetailInteractorProtocol {
 protocol PostDetailPresenterProtocol {
     var selectedPost: PostDetailModel.Post? { get set }
     func viewDidLoad()
+    func favoriteButtonTapped(favoriteState: Bool)
 }
 
 protocol PostDetailInteractorOutputProtocol: class {

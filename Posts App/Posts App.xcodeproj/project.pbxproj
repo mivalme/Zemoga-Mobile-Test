@@ -60,6 +60,8 @@
 		25829866243FC8D10053AD37 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25829865243FC8D10053AD37 /* Storyboarded.swift */; };
 		25829868243FC9240053AD37 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25829867243FC9240053AD37 /* Storyboards.swift */; };
 		2583A4CE2443EEA3002943A3 /* ZemogaThemeImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2583A4CD2443EEA3002943A3 /* ZemogaThemeImages.swift */; };
+		2583A4D22443FF6C002943A3 /* delete.json in Resources */ = {isa = PBXBuildFile; fileRef = 2583A4D12443FF6C002943A3 /* delete.json */; };
+		2583A4D824440593002943A3 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 2583A4D724440593002943A3 /* loading.json */; };
 		E717D2E4A5D098FBDFDCC83E /* Pods_Posts_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD4FA9D81E697817D15900B /* Pods_Posts_AppTests.framework */; };
 		F36459893777E6EB6AC9435F /* Pods_Posts_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D106ECE7BF6CA3EFC06B617C /* Pods_Posts_App.framework */; };
 /* End PBXBuildFile section */
@@ -133,6 +135,8 @@
 		25829865243FC8D10053AD37 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		25829867243FC9240053AD37 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		2583A4CD2443EEA3002943A3 /* ZemogaThemeImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZemogaThemeImages.swift; sourceTree = "<group>"; };
+		2583A4D12443FF6C002943A3 /* delete.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = delete.json; sourceTree = "<group>"; };
+		2583A4D724440593002943A3 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		2C1CAF1FE39BBD94A5BFB7B2 /* Pods-Posts AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Posts AppTests.release.xcconfig"; path = "Target Support Files/Pods-Posts AppTests/Pods-Posts AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		8AD4FA9D81E697817D15900B /* Pods_Posts_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Posts_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D106ECE7BF6CA3EFC06B617C /* Pods_Posts_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Posts_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,7 +196,6 @@
 				25829863243FC8580053AD37 /* SupportFiles */,
 				255EFBBA243FFF1400438951 /* ZemogaTheme */,
 				2550A524243FB8840005549F /* LaunchScreen.storyboard */,
-				2550A51F243FB8820005549F /* Posts_App.xcdatamodeld */,
 			);
 			path = "Posts App";
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 		255EFBBD2440047A00438951 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2583A4D02443FF5E002943A3 /* LottieAnimations */,
 				2550A522243FB8840005549F /* Assets.xcassets */,
 				255EFBB7243FFE6900438951 /* Colors.xcassets */,
 				255EFBBE2440048F00438951 /* LocalizableStrings.swift */,
@@ -439,6 +443,7 @@
 		255EFC1F2443DDC400438951 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				2583A4CF2443FDD1002943A3 /* DataModel */,
 				255EFC232443E0BD00438951 /* Entity */,
 				255EFC222443DE6600438951 /* Manager */,
 			);
@@ -553,6 +558,23 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		2583A4CF2443FDD1002943A3 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				2550A51F243FB8820005549F /* Posts_App.xcdatamodeld */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		2583A4D02443FF5E002943A3 /* LottieAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				2583A4D724440593002943A3 /* loading.json */,
+				2583A4D12443FF6C002943A3 /* delete.json */,
+			);
+			path = LottieAnimations;
+			sourceTree = "<group>";
+		};
 		780F52AC03955D0227B884AF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -657,9 +679,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2583A4D22443FF6C002943A3 /* delete.json in Resources */,
 				255EFBC72440058D00438951 /* Localizable.strings in Resources */,
 				255EFC1E2443D36800438951 /* PostCommentTableViewCell.xib in Resources */,
 				255EFBAC243FCCB100438951 /* PostsList.storyboard in Resources */,
+				2583A4D824440593002943A3 /* loading.json in Resources */,
 				255EFBB8243FFE6900438951 /* Colors.xcassets in Resources */,
 				255EFC012443B71100438951 /* PostDetail.storyboard in Resources */,
 				255EFBCC2441254400438951 /* PostTableViewCell.xib in Resources */,

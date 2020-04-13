@@ -9,6 +9,7 @@
 import UIKit
 
 class ZemogaThemeColors {
-    static let CustomGreen = UIColor(named: "customGreen")
-    static let BackgroundColor = UIColor(named: "backgroundColor")
+    static let customGreen = UIColor(named: "customGreen")
+    static let backgroundColor = UIColor(named: "backgroundColor")
+    static let favoriteYellow = UIColor(named: "favoriteYellow")
 }

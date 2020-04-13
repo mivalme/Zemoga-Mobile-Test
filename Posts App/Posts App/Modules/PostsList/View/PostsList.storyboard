@@ -24,6 +24,9 @@
                                     <segment title="Favorites"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" name="customGreen"/>
+                                <connections>
+                                    <action selector="segmentedControlChange:" destination="ril-9v-8ZU" eventType="valueChanged" id="kQV-KI-2uy"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ffC-6z-o14">
                                 <rect key="frame" x="0.0" y="47" width="320" height="481"/>
@@ -46,27 +49,36 @@
                                     <action selector="deleteAllButtonAction:" destination="ril-9v-8ZU" eventType="touchUpInside" id="ak3-yt-8b6"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVq-4s-Yek">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ZYM-O8-5dJ" firstAttribute="trailing" secondItem="ffC-6z-o14" secondAttribute="trailing" id="1Um-kP-rYA"/>
+                            <constraint firstItem="BVq-4s-Yek" firstAttribute="top" secondItem="ZYM-O8-5dJ" secondAttribute="top" id="6Ie-u9-wvd"/>
                             <constraint firstItem="ZYM-O8-5dJ" firstAttribute="trailing" secondItem="Wfh-8U-1E1" secondAttribute="trailing" id="Aol-8t-sdB"/>
                             <constraint firstItem="UGT-I1-xiW" firstAttribute="top" secondItem="ZYM-O8-5dJ" secondAttribute="top" constant="8" id="B5b-Wp-RKo"/>
                             <constraint firstItem="nBh-zt-KfT" firstAttribute="top" secondItem="ffC-6z-o14" secondAttribute="bottom" id="JbA-qQ-bOa"/>
                             <constraint firstItem="ZYM-O8-5dJ" firstAttribute="trailing" secondItem="nBh-zt-KfT" secondAttribute="trailing" id="Ky9-lQ-crT"/>
                             <constraint firstItem="ZYM-O8-5dJ" firstAttribute="bottom" secondItem="nBh-zt-KfT" secondAttribute="bottom" id="OnR-CH-CED"/>
+                            <constraint firstItem="ZYM-O8-5dJ" firstAttribute="trailing" secondItem="BVq-4s-Yek" secondAttribute="trailing" id="QH9-ba-hrj"/>
                             <constraint firstItem="Wfh-8U-1E1" firstAttribute="leading" secondItem="ZYM-O8-5dJ" secondAttribute="leading" id="Qv0-vb-ZTo"/>
                             <constraint firstItem="ZYM-O8-5dJ" firstAttribute="trailing" secondItem="UGT-I1-xiW" secondAttribute="trailing" constant="16" id="Ub9-2a-oNW"/>
                             <constraint firstItem="ffC-6z-o14" firstAttribute="top" secondItem="UGT-I1-xiW" secondAttribute="bottom" constant="8" id="a4e-gI-xNa"/>
                             <constraint firstItem="UGT-I1-xiW" firstAttribute="leading" secondItem="ZYM-O8-5dJ" secondAttribute="leading" constant="16" id="be9-Xq-Jzc"/>
+                            <constraint firstAttribute="bottom" secondItem="BVq-4s-Yek" secondAttribute="bottom" id="bgb-XJ-jlD"/>
                             <constraint firstItem="Wfh-8U-1E1" firstAttribute="bottom" secondItem="AHh-Mj-JyH" secondAttribute="bottom" id="cRG-vH-iKd"/>
                             <constraint firstItem="Wfh-8U-1E1" firstAttribute="top" secondItem="nBh-zt-KfT" secondAttribute="bottom" id="eAf-xJ-nBi"/>
                             <constraint firstItem="nBh-zt-KfT" firstAttribute="leading" secondItem="ZYM-O8-5dJ" secondAttribute="leading" id="eIN-yL-yrD"/>
+                            <constraint firstItem="BVq-4s-Yek" firstAttribute="leading" secondItem="ZYM-O8-5dJ" secondAttribute="leading" id="giL-Vu-y09"/>
                             <constraint firstItem="ffC-6z-o14" firstAttribute="leading" secondItem="ZYM-O8-5dJ" secondAttribute="leading" id="oCD-aS-tdi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZYM-O8-5dJ"/>
                     </view>
                     <connections>
+                        <outlet property="blurView" destination="BVq-4s-Yek" id="yuy-P2-1kX"/>
                         <outlet property="postsTableView" destination="ffC-6z-o14" id="dwn-yC-PV6"/>
                         <outlet property="segmentedControl" destination="UGT-I1-xiW" id="TH1-tU-ItG"/>
                     </connections>

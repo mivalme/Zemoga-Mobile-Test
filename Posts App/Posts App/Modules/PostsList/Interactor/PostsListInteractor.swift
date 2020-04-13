@@ -25,10 +25,16 @@ class PostsListInteractor: PostsListInteractorProtocol {
             switch response {
             case .success(let response):
                 var model = [PostsListModel.Post]()
-                response.forEach({
-                    let post = PostsListModel.Post(userId: $0.userId, id: $0.id, title: $0.title, body: $0.body)
+                response.enumerated().forEach({
+                    let post = PostsListModel.Post(userId: $0.1.userId,
+                                                   id: $0.1.id,
+                                                   title: $0.1.title,
+                                                   body: $0.1.body,
+                                                   read: ($0.0 > 20),
+                                                   favorite: false)
                     model.append(post)
                 })
+                self?.deleteAllPostsCoreData()
                 self?.savePostsCoreData(postsList: model)
                 self?.presenter?.fetchedPostsSuccess(model: model)
             case .failure(let error):
@@ -45,7 +51,7 @@ class PostsListInteractor: PostsListInteractorProtocol {
                     self?.fetchPosts()
                 } else {
                     let postsListModel = data.map({
-                        PostsListModel.Post(userId: $0.userId, id: $0.id, title: $0.title, body: $0.body)
+                        PostsListModel.Post(userId: $0.userId, id: $0.id, title: $0.title, body: $0.body, read: $0.read, favorite: $0.favorite)
                     })
                     self?.presenter?.fetchedPostsSuccess(model: postsListModel)
                 }
@@ -57,7 +63,7 @@ class PostsListInteractor: PostsListInteractorProtocol {
     
     private func savePostsCoreData(postsList: [PostsListModel.Post]) {
         let postsModel = postsList.map({
-            CoreDataModel.Post(userId: $0.userId, id: $0.id, title: $0.title, body: $0.body)
+            CoreDataModel.Post(userId: $0.userId, id: $0.id, title: $0.title, body: $0.body, read: $0.read, favorite: $0.favorite)
         })
         coreDataManager?.savePostsList(postsModel: postsModel, completion: { (response) in
             switch response {
@@ -66,6 +72,18 @@ class PostsListInteractor: PostsListInteractorProtocol {
             case .failure(let error):
                 break
             }
+        })
+    }
+    
+    func deleteAllPostsCoreData() {
+        coreDataManager?.deleteAllPosts(completion: { (response) in
+            
+        })
+    }
+    
+    func deletePostCoreData(postId: Int) {
+        coreDataManager?.deletePost(postId: postId, completion: { (response) in
+            
         })
     }
 }

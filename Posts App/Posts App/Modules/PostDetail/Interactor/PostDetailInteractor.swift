@@ -12,11 +12,14 @@ class PostDetailInteractor: PostDetailInteractorProtocol {
     weak var presenter: PostDetailInteractorOutputProtocol?
     var usersNetworkManager: UsersNetworkManagerProtocol?
     var postsNetworkManager: PostsNetworkManagerProtocol?
+    var coreDataManager: CoreDataManagerProtocol?
     
     init(usersNetworkManager: UsersNetworkManagerProtocol = UsersNetworkManager(),
-         postsNetworkManager: PostsNetworkManagerProtocol = PostsNetworkManager()) {
+         postsNetworkManager: PostsNetworkManagerProtocol = PostsNetworkManager(),
+         coreDataManager: CoreDataManagerProtocol = CoreDataManager()) {
         self.usersNetworkManager = usersNetworkManager
         self.postsNetworkManager = postsNetworkManager
+        self.coreDataManager = coreDataManager
     }
     
     func fetchUser(userId: Int) {
@@ -45,6 +48,18 @@ class PostDetailInteractor: PostDetailInteractorProtocol {
             case .failure(let error):
                 self?.presenter?.fetchedPostCommentsFailure(errorMessage: error.localizedDescription)
             }
+        })
+    }
+    
+    func updatePost(post: PostDetailModel.Post) {
+        let post = CoreDataModel.Post(userId: post.userId,
+                                      id: post.id,
+                                      title: post.title,
+                                      body: post.body,
+                                      read: post.read,
+                                      favorite: post.favorite)
+        coreDataManager?.updatePost(postModel: post, completion: { (response) in
+            
         })
     }
 }

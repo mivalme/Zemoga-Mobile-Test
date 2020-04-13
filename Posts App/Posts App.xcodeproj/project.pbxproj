@@ -59,6 +59,7 @@
 		255EFC252443E0CB00438951 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFC242443E0CB00438951 /* CoreDataModel.swift */; };
 		25829866243FC8D10053AD37 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25829865243FC8D10053AD37 /* Storyboarded.swift */; };
 		25829868243FC9240053AD37 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25829867243FC9240053AD37 /* Storyboards.swift */; };
+		2583A4CE2443EEA3002943A3 /* ZemogaThemeImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2583A4CD2443EEA3002943A3 /* ZemogaThemeImages.swift */; };
 		E717D2E4A5D098FBDFDCC83E /* Pods_Posts_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD4FA9D81E697817D15900B /* Pods_Posts_AppTests.framework */; };
 		F36459893777E6EB6AC9435F /* Pods_Posts_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D106ECE7BF6CA3EFC06B617C /* Pods_Posts_App.framework */; };
 /* End PBXBuildFile section */
@@ -131,6 +132,7 @@
 		255EFC242443E0CB00438951 /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 		25829865243FC8D10053AD37 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		25829867243FC9240053AD37 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		2583A4CD2443EEA3002943A3 /* ZemogaThemeImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZemogaThemeImages.swift; sourceTree = "<group>"; };
 		2C1CAF1FE39BBD94A5BFB7B2 /* Pods-Posts AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Posts AppTests.release.xcconfig"; path = "Target Support Files/Pods-Posts AppTests/Pods-Posts AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		8AD4FA9D81E697817D15900B /* Pods_Posts_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Posts_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D106ECE7BF6CA3EFC06B617C /* Pods_Posts_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Posts_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				255EFBBB243FFF5900438951 /* ZemogaThemeColors.swift */,
+				2583A4CD2443EEA3002943A3 /* ZemogaThemeImages.swift */,
 			);
 			path = ZemogaTheme;
 			sourceTree = "<group>";
@@ -781,6 +784,7 @@
 				2550A521243FB8820005549F /* Posts_App.xcdatamodeld in Sources */,
 				25829866243FC8D10053AD37 /* Storyboarded.swift in Sources */,
 				255EFBE624413C7A00438951 /* JSONParameterEncoder.swift in Sources */,
+				2583A4CE2443EEA3002943A3 /* ZemogaThemeImages.swift in Sources */,
 				255EFC032443B73300438951 /* PostDetailRouter.swift in Sources */,
 				255EFBDE244138F000438951 /* NetworkRouter.swift in Sources */,
 				255EFBBF2440048F00438951 /* LocalizableStrings.swift in Sources */,

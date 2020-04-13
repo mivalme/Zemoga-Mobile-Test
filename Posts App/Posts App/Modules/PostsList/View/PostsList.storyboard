@@ -42,6 +42,9 @@
                                 <state key="normal" title="Delete All">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="deleteAllButtonAction:" destination="ril-9v-8ZU" eventType="touchUpInside" id="ak3-yt-8b6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="BackgroundColor"/>

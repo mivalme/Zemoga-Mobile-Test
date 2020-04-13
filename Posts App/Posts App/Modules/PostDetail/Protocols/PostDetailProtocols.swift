@@ -11,6 +11,7 @@ import Foundation
 protocol PostDetailInteractorProtocol {
     func fetchUser(userId: Int)
     func fetchPostComments(postId: Int)
+    func updatePost(post: PostDetailModel.Post)
 }
 
 protocol PostDetailPresenterProtocol {

@@ -16,10 +16,12 @@ class PostDetailPresenter: PostDetailPresenterProtocol {
     var selectedPost: PostDetailModel.Post?
     
     func viewDidLoad() {
-        guard let selectedPost = self.selectedPost else { return }
+        guard var selectedPost = self.selectedPost else { return }
         view?.displayPostData(post: selectedPost)
         interactor?.fetchUser(userId: selectedPost.userId)
         interactor?.fetchPostComments(postId: selectedPost.id)
+        selectedPost.read = true
+        interactor?.updatePost(post: selectedPost)
     }
 }
 

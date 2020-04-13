@@ -54,6 +54,7 @@ m</string>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="indicatorImageView" destination="sKr-Bt-IbY" id="rCO-9a-7B9"/>
                 <outlet property="titleLabel" destination="ND1-Bt-gtj" id="TRM-Jz-T6y"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="102.45535714285714"/>

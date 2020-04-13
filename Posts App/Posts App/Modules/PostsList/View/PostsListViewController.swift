@@ -23,9 +23,15 @@ class PostsListViewController: BaseViewController {
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.viewWillAppear()
+    }
+    
     private func setupUI() {
         self.title = LocalizableStrings.PostList.title
         setupCustomSegmentedControl()
+        addReloadButton()
         setUpTableView()
     }
     
@@ -39,11 +45,26 @@ class PostsListViewController: BaseViewController {
         self.segmentedControl.setTitleTextAttributes([.foregroundColor : UIColor.white], for: .selected)
         self.segmentedControl.setTitleTextAttributes([.foregroundColor : ZemogaThemeColors.CustomGreen ?? UIColor.black], for: .normal)
     }
+    
+    private func addReloadButton() {
+        let refreshBarButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(reloadButtonAction))
+        navigationItem.rightBarButtonItem =  refreshBarButton
+    }
+    
+    @objc private func reloadButtonAction() {
+        self.presenter?.reloadButtonTapped()
+    }
+    
+    @IBAction private func deleteAllButtonAction(_ sender: Any) {
+        presenter?.deleteAllButtonTapped()
+        postsListDataSource?.removeAll()
+        postsTableView.reloadData()
+    }
 }
 
 extension PostsListViewController: PostsListViewProtocol {
-    func displayPostsList(mdoel: [PostsListModel.Post]) {
-        self.postsListDataSource = mdoel
+    func displayPostsList(model: [PostsListModel.Post]) {
+        self.postsListDataSource = model
         self.postsTableView.reloadData()
     }
 }

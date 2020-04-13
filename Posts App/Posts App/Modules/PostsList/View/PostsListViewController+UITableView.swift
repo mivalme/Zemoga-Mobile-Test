@@ -36,7 +36,8 @@ extension PostsListViewController: UITableViewDelegate, UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+        if editingStyle == .delete, let postId = postsListDataSource?[indexPath.row].id {
+            presenter?.deletePost(postId: postId)
             postsListDataSource?.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }

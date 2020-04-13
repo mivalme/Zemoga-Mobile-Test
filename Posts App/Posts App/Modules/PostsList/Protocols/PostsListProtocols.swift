@@ -11,11 +11,17 @@ import Foundation
 protocol PostsListInteractorProtocol {
     func fetchPosts()
     func fetchSavedPostsList()
+    func deleteAllPostsCoreData()
+    func deletePostCoreData(postId: Int)
 }
 
 protocol PostsListPresenterProtocol {
     func viewDidLoad()
+    func viewWillAppear()
     func didSelectPost(selectedPost: PostsListModel.Post)
+    func deleteAllButtonTapped()
+    func deletePost(postId: Int)
+    func reloadButtonTapped()
 }
 
 protocol PostsListInteractorOutputProtocol: class {
@@ -28,5 +34,5 @@ protocol PostsListRouterProtocol {
 }
 
 protocol PostsListViewProtocol: class {
-    func displayPostsList(mdoel: [PostsListModel.Post])
+    func displayPostsList(model: [PostsListModel.Post])
 }

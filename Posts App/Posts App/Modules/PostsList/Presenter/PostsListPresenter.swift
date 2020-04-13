@@ -14,7 +14,7 @@ class PostsListPresenter: PostsListPresenterProtocol {
     var interactor: PostsListInteractorProtocol?
     
     func viewDidLoad() {
-        interactor?.fetchPosts()
+        interactor?.fetchSavedPostsList()
     }
     
     func didSelectPost(selectedPost: PostsListModel.Post) {

@@ -55,6 +55,8 @@
 		255EFC192443CD3B00438951 /* PostDetailViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFC182443CD3B00438951 /* PostDetailViewController+UITableView.swift */; };
 		255EFC1D2443D36800438951 /* PostCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFC1B2443D36800438951 /* PostCommentTableViewCell.swift */; };
 		255EFC1E2443D36800438951 /* PostCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 255EFC1C2443D36800438951 /* PostCommentTableViewCell.xib */; };
+		255EFC212443DDD500438951 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFC202443DDD500438951 /* CoreDataManager.swift */; };
+		255EFC252443E0CB00438951 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFC242443E0CB00438951 /* CoreDataModel.swift */; };
 		25829866243FC8D10053AD37 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25829865243FC8D10053AD37 /* Storyboarded.swift */; };
 		25829868243FC9240053AD37 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25829867243FC9240053AD37 /* Storyboards.swift */; };
 		E717D2E4A5D098FBDFDCC83E /* Pods_Posts_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD4FA9D81E697817D15900B /* Pods_Posts_AppTests.framework */; };
@@ -125,6 +127,8 @@
 		255EFC182443CD3B00438951 /* PostDetailViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDetailViewController+UITableView.swift"; sourceTree = "<group>"; };
 		255EFC1B2443D36800438951 /* PostCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentTableViewCell.swift; sourceTree = "<group>"; };
 		255EFC1C2443D36800438951 /* PostCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCommentTableViewCell.xib; sourceTree = "<group>"; };
+		255EFC202443DDD500438951 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		255EFC242443E0CB00438951 /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 		25829865243FC8D10053AD37 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		25829867243FC9240053AD37 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		2C1CAF1FE39BBD94A5BFB7B2 /* Pods-Posts AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Posts AppTests.release.xcconfig"; path = "Target Support Files/Pods-Posts AppTests/Pods-Posts AppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,8 +184,9 @@
 				255EFBBD2440047A00438951 /* Assets */,
 				25829864243FC88F0053AD37 /* Config */,
 				2582985B243FC4910053AD37 /* Modules */,
-				255EFBCF24412E8700438951 /* Extensions */,
+				255EFC1F2443DDC400438951 /* CoreData */,
 				255EFBD2244136A900438951 /* NetworkManager */,
+				255EFBCF24412E8700438951 /* Extensions */,
 				25829863243FC8580053AD37 /* SupportFiles */,
 				255EFBBA243FFF1400438951 /* ZemogaTheme */,
 				2550A524243FB8840005549F /* LaunchScreen.storyboard */,
@@ -426,6 +431,31 @@
 				255EFC1C2443D36800438951 /* PostCommentTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		255EFC1F2443DDC400438951 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				255EFC232443E0BD00438951 /* Entity */,
+				255EFC222443DE6600438951 /* Manager */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		255EFC222443DE6600438951 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				255EFC202443DDD500438951 /* CoreDataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		255EFC232443E0BD00438951 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				255EFC242443E0CB00438951 /* CoreDataModel.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		2582985B243FC4910053AD37 /* Modules */ = {
@@ -725,6 +755,7 @@
 				255EFBFF2443B70800438951 /* PostDetailViewController.swift in Sources */,
 				255EFBB0243FCE1400438951 /* PostsListProtocols.swift in Sources */,
 				255EFBF4244144F000438951 /* getPostCommentsUseCase.swift in Sources */,
+				255EFC212443DDD500438951 /* CoreDataManager.swift in Sources */,
 				255EFBF62442618200438951 /* PostsListModel.swift in Sources */,
 				255EFC152443C39000438951 /* Encodable+Utils.swift in Sources */,
 				255EFBE824413D8C00438951 /* DefaultNetworkManager.swift in Sources */,
@@ -733,6 +764,7 @@
 				255EFBBC243FFF5900438951 /* ZemogaThemeColors.swift in Sources */,
 				255EFC092443B75100438951 /* PostDetailInteractor.swift in Sources */,
 				255EFBCE24412DF600438951 /* PostsListViewController+UITableView.swift in Sources */,
+				255EFC252443E0CB00438951 /* CoreDataModel.swift in Sources */,
 				255EFBE424413C4300438951 /* URLParameterEncoder.swift in Sources */,
 				255EFC072443B74700438951 /* PostDetailPresenter.swift in Sources */,
 				255EFC172443C3DF00438951 /* UsersNetworkManager.swift in Sources */,

@@ -10,6 +10,7 @@ import Foundation
 
 protocol PostsListInteractorProtocol {
     func fetchPosts()
+    func fetchSavedPostsList()
 }
 
 protocol PostsListPresenterProtocol {

@@ -109,7 +109,12 @@ class CoreDataManager: CoreDataManagerProtocol {
             postsList.forEach({
                 managedContext.delete($0)
             })
-            completion(.success(String()))
+            do {
+                try managedContext.save()
+                completion(.success(String()))
+            } catch let error as NSError {
+                completion(.failure(error))
+            }
         } catch let error as NSError {
             completion(.failure(error))
         }
@@ -124,7 +129,12 @@ class CoreDataManager: CoreDataManagerProtocol {
         do {
             guard let post = try managedContext.fetch(fetchRequest).first else { return }
             managedContext.delete(post)
-            completion(.success(String()))
+            do {
+                try managedContext.save()
+                completion(.success(String()))
+            } catch let error as NSError {
+                completion(.failure(error))
+            }
         } catch let error as NSError {
             completion(.failure(error))
         }

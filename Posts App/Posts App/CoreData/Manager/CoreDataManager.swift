@@ -17,6 +17,9 @@ enum CoreDataResult<T> {
 protocol CoreDataManagerProtocol {
     func getPostsList(completion: @escaping (CoreDataResult<[CoreDataModel.Post]>) -> Void)
     func savePostsList(postsModel: [CoreDataModel.Post],completion: @escaping (CoreDataResult<String>) -> Void)
+    func updatePost(postModel: CoreDataModel.Post, completion: @escaping (CoreDataResult<String>) -> Void)
+    func deleteAllPosts(completion: @escaping (CoreDataResult<String>) -> Void)
+    func deletePost(postId: Int, completion: @escaping (CoreDataResult<String>) -> Void)
 }
 
 class CoreDataManager: CoreDataManagerProtocol {
@@ -40,8 +43,10 @@ class CoreDataManager: CoreDataManagerProtocol {
                 if let userId = $0.value(forKey: "userId") as? Int,
                     let id = $0.value(forKey: "id") as? Int,
                     let title = $0.value(forKey: "title") as? String,
-                    let body = $0.value(forKey: "body") as? String {
-                    let post = CoreDataModel.Post(userId: userId, id: id, title: title, body: body)
+                    let body = $0.value(forKey: "body") as? String,
+                    let read = $0.value(forKey: "read") as? Bool,
+                    let favorite = $0.value(forKey: "favorite") as? Bool {
+                    let post = CoreDataModel.Post(userId: userId, id: id, title: title, body: body, read: read, favorite: favorite)
                     postsListModel.append(post)
                 }
             })
@@ -51,7 +56,7 @@ class CoreDataManager: CoreDataManagerProtocol {
         }
     }
     
-    func savePostsList(postsModel: [CoreDataModel.Post],completion: @escaping (CoreDataResult<String>) -> Void) {
+    func savePostsList(postsModel: [CoreDataModel.Post], completion: @escaping (CoreDataResult<String>) -> Void) {
         intializeCoreData()
         guard
             let managedContext = self.managedContext,
@@ -60,7 +65,7 @@ class CoreDataManager: CoreDataManagerProtocol {
         
         postsModel.forEach({
             let post = NSManagedObject(entity: entity, insertInto: managedContext)
-            post.setValuesForKeys(["id": $0.id, "userId": $0.userId, "title": $0.title, "body": $0.body])
+            post.setValuesForKeys(["id": $0.id, "userId": $0.userId, "title": $0.title, "body": $0.body, "read": $0.read, "favorite": $0.favorite])
             do {
                 try managedContext.save()
             } catch let error as NSError {
@@ -68,5 +73,60 @@ class CoreDataManager: CoreDataManagerProtocol {
             }
         })
         completion(.success(String()))
+    }
+    
+    func updatePost(postModel: CoreDataModel.Post, completion: @escaping (CoreDataResult<String>) -> Void) {
+        intializeCoreData()
+        guard let managedContext = self.managedContext else { return }
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Post")
+        fetchRequest.predicate = NSPredicate(format: "id = %@", "\(postModel.id)")
+        
+        do {
+            let post = try managedContext.fetch(fetchRequest).first
+            post?.setValuesForKeys(["id": postModel.id,
+                                    "userId": postModel.userId,
+                                    "title": postModel.title,
+                                    "body": postModel.body,
+                                    "read": postModel.read,
+                                    "favorite": postModel.favorite])
+            do {
+                try managedContext.save()
+                completion(.success(String()))
+            } catch let error as NSError {
+                completion(.failure(error))
+            }
+        } catch let error as NSError {
+            completion(.failure(error))
+        }
+    }
+    
+    func deleteAllPosts(completion: @escaping (CoreDataResult<String>) -> Void) {
+        intializeCoreData()
+        guard let managedContext = self.managedContext else { return }
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Post")
+        do {
+            let postsList = try managedContext.fetch(fetchRequest)
+            postsList.forEach({
+                managedContext.delete($0)
+            })
+            completion(.success(String()))
+        } catch let error as NSError {
+            completion(.failure(error))
+        }
+    }
+    
+    func deletePost(postId: Int, completion: @escaping (CoreDataResult<String>) -> Void) {
+        intializeCoreData()
+        guard let managedContext = self.managedContext else { return }
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Post")
+        fetchRequest.predicate = NSPredicate(format: "id = %@", "\(postId)")
+        
+        do {
+            guard let post = try managedContext.fetch(fetchRequest).first else { return }
+            managedContext.delete(post)
+            completion(.success(String()))
+        } catch let error as NSError {
+            completion(.failure(error))
+        }
     }
 }

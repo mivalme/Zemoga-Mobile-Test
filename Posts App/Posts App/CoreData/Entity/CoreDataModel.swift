@@ -14,5 +14,7 @@ struct CoreDataModel {
         var id: Int
         var title: String
         var body: String
+        var read: Bool
+        var favorite: Bool
     }
 }

@@ -40,7 +40,13 @@ class MockCoreDataManager: CoreDataManagerProtocol {
     }
     
     func updatePost(postModel: CoreDataModel.Post, completion: @escaping (CoreDataResult<String>) -> Void) {
-        
+        guard let mockResult = self.mockResult else { return }
+        switch mockResult {
+        case .success:
+            completion(.success(String()))
+        case .failure:
+            completion(.failure(MockCoreDataError(localizedDescription: "mockCoreDataError")))
+        }
     }
     
     func deleteAllPosts(completion: @escaping (CoreDataResult<String>) -> Void) {

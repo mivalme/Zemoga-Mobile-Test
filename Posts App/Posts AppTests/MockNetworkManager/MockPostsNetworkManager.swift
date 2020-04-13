@@ -27,11 +27,19 @@ class MockPostsNetworkManager: PostsNetworkManagerProtocol {
     }
     
     func getPostComments(request: GetPostCommentsUseCase.Request, completion: @escaping (PostsAppResult<GetPostCommentsUseCase.Response>) -> Void) {
-        
+        guard let mockResponse = self.mockResponse else { return }
+        switch mockResponse {
+        case .success:
+            completion(.success(DummyModel.GetPostCommentsUseCaseResponse))
+        case .failure:
+            completion(.failure(DummyModel.error))
+        }
     }
     
+    //MARK: - DummyModel
     struct DummyModel {
         static let GetPostsUseCaseResponse: GetPostsUseCase.Response = [GetPostsUseCase.Post(userId: 0, id: 0, title: "testTitle", body: "testBody")]
         static let error = MockNetworkManagerError(localizedDescription: "mockNetworkManagerError")
+        static let GetPostCommentsUseCaseResponse: GetPostCommentsUseCase.Response = [GetPostCommentsUseCase.Comment(postId: 0, id: 0, name: "testName", email: "testEmail", body: "testBody")]
     }
 }

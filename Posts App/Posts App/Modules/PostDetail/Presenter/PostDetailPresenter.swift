@@ -37,7 +37,7 @@ extension PostDetailPresenter: PostDetailInteractorOutputProtocol {
     }
     
     func fetchedUserFailure(errorMessage: String) {
-        
+        view?.showErrorAlert(errorMessage: errorMessage)
     }
     
     func fetchedPostCommentsSuccess(commentsModel: [PostDetailModel.Comment]) {
@@ -45,6 +45,10 @@ extension PostDetailPresenter: PostDetailInteractorOutputProtocol {
     }
     
     func fetchedPostCommentsFailure(errorMessage: String) {
-        
+        view?.showErrorAlert(errorMessage: errorMessage)
+    }
+    
+    func updatePostCoreDataFailure(errorMessage: String) {
+        view?.showErrorAlert(errorMessage: errorMessage)
     }
 }

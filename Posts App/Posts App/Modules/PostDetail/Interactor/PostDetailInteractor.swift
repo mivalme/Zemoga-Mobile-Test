@@ -58,8 +58,13 @@ class PostDetailInteractor: PostDetailInteractorProtocol {
                                       body: post.body,
                                       read: post.read,
                                       favorite: post.favorite)
-        coreDataManager?.updatePost(postModel: post, completion: { (response) in
-            
+        coreDataManager?.updatePost(postModel: post, completion: { [weak self] (response) in
+            switch response {
+            case .success(_):
+                break
+            case .failure(let error):
+                self?.presenter?.updatePostCoreDataFailure(errorMessage: error.localizedDescription)
+            }
         })
     }
 }

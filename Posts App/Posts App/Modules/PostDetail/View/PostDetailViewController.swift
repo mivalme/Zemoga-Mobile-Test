@@ -71,4 +71,11 @@ extension PostDetailViewController: PostDetailViewProtocol {
         self.postCommentsDataSource = postComments
         self.commentsTableView.reloadData()
     }
+    
+    func showErrorAlert(errorMessage: String) {
+        let alert = UIAlertController(title: LocalizableStrings.PostDetail.errorAlertTitle, message: errorMessage, preferredStyle: .alert)
+        let continueAction = UIAlertAction(title: LocalizableStrings.PostDetail.errorAlertButtonTitle, style: .default, handler: nil)
+        alert.addAction(continueAction)
+        self.present(alert, animated: true, completion: nil)
+    }
 }

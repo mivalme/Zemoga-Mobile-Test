@@ -25,6 +25,7 @@ protocol PostDetailInteractorOutputProtocol: class {
     func fetchedUserFailure(errorMessage: String)
     func fetchedPostCommentsSuccess(commentsModel: [PostDetailModel.Comment])
     func fetchedPostCommentsFailure(errorMessage: String)
+    func updatePostCoreDataFailure(errorMessage: String)
 }
 
 protocol PostDetailRouterProtocol {
@@ -35,4 +36,5 @@ protocol PostDetailViewProtocol: class {
     func displayPostData(post: PostDetailModel.Post)
     func displayUserData(user: PostDetailModel.User)
     func displayPostCommentsData(postComments: [PostDetailModel.Comment])
+    func showErrorAlert(errorMessage: String)
 }

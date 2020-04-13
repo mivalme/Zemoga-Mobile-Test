@@ -13,17 +13,23 @@ class PostsListInteractorTest: XCTestCase {
     
     var sut: PostsListInteractor!
     var mockPresenter: MockPresenter!
+    var mockPostsNetworkManager: MockPostsNetworkManager!
+    var mockCoreDataManager: MockCoreDataManager!
 
     override func setUp() {
         super.setUp()
         mockPresenter = MockPresenter()
-        sut = PostsListInteractor()
+        mockPostsNetworkManager = MockPostsNetworkManager()
+        mockCoreDataManager = MockCoreDataManager()
+        sut = PostsListInteractor(postsNetworkManager: mockPostsNetworkManager, coreDataManager: mockCoreDataManager)
         sut.presenter = mockPresenter
     }
 
     override func tearDown() {
         super.tearDown()
         mockPresenter = nil
+        mockPostsNetworkManager = nil
+        mockCoreDataManager = nil
         sut = nil
     }
     

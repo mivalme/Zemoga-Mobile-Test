@@ -12,7 +12,7 @@ import Foundation
 class MockPostsNetworkManager: PostsNetworkManagerProtocol {
     var mockResponse: MockNetworkManagerResponse?
     
-    init(mockResponse: MockNetworkManagerResponse) {
+    init(mockResponse: MockNetworkManagerResponse? = nil) {
         self.mockResponse = mockResponse
     }
     

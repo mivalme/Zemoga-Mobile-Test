@@ -21,7 +21,7 @@ struct MockCoreDataError: Error {
 class MockCoreDataManager: CoreDataManagerProtocol {
     var mockResult: MockCoreDataResult?
     
-    init(mockResult: MockCoreDataResult) {
+    init(mockResult: MockCoreDataResult? = nil) {
         self.mockResult = mockResult
     }
     

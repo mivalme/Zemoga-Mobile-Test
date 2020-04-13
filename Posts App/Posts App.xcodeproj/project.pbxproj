@@ -11,7 +11,6 @@
 		2550A521243FB8820005549F /* Posts_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2550A51F243FB8820005549F /* Posts_App.xcdatamodeld */; };
 		2550A523243FB8840005549F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2550A522243FB8840005549F /* Assets.xcassets */; };
 		2550A526243FB8840005549F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2550A524243FB8840005549F /* LaunchScreen.storyboard */; };
-		2550A531243FB8840005549F /* Posts_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550A530243FB8840005549F /* Posts_AppTests.swift */; };
 		255EFBAA243FCB7000438951 /* PostsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBA9243FCB7000438951 /* PostsListViewController.swift */; };
 		255EFBAC243FCCB100438951 /* PostsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 255EFBAB243FCCB100438951 /* PostsList.storyboard */; };
 		255EFBAE243FCE0A00438951 /* PostsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255EFBAD243FCE0A00438951 /* PostsListRouter.swift */; };
@@ -62,6 +61,11 @@
 		2583A4CE2443EEA3002943A3 /* ZemogaThemeImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2583A4CD2443EEA3002943A3 /* ZemogaThemeImages.swift */; };
 		2583A4D22443FF6C002943A3 /* delete.json in Resources */ = {isa = PBXBuildFile; fileRef = 2583A4D12443FF6C002943A3 /* delete.json */; };
 		2583A4D824440593002943A3 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 2583A4D724440593002943A3 /* loading.json */; };
+		2583A4DC24441FA2002943A3 /* PostsListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2583A4DB24441FA2002943A3 /* PostsListPresenterTest.swift */; };
+		2583A4DE24442E95002943A3 /* PostsListInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2583A4DD24442E95002943A3 /* PostsListInteractorTest.swift */; };
+		2583A4E224442F87002943A3 /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2583A4E124442F87002943A3 /* MockCoreDataManager.swift */; };
+		2583A4E62444308C002943A3 /* MockPostsNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2583A4E52444308C002943A3 /* MockPostsNetworkManager.swift */; };
+		2583A4E8244435D0002943A3 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2583A4E7244435D0002943A3 /* MockNetworkManager.swift */; };
 		E717D2E4A5D098FBDFDCC83E /* Pods_Posts_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD4FA9D81E697817D15900B /* Pods_Posts_AppTests.framework */; };
 		F36459893777E6EB6AC9435F /* Pods_Posts_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D106ECE7BF6CA3EFC06B617C /* Pods_Posts_App.framework */; };
 /* End PBXBuildFile section */
@@ -85,7 +89,6 @@
 		2550A525243FB8840005549F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2550A527243FB8840005549F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2550A52C243FB8840005549F /* Posts AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Posts AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2550A530243FB8840005549F /* Posts_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts_AppTests.swift; sourceTree = "<group>"; };
 		2550A532243FB8840005549F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		255EFBA9243FCB7000438951 /* PostsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListViewController.swift; sourceTree = "<group>"; };
 		255EFBAB243FCCB100438951 /* PostsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostsList.storyboard; sourceTree = "<group>"; };
@@ -137,6 +140,11 @@
 		2583A4CD2443EEA3002943A3 /* ZemogaThemeImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZemogaThemeImages.swift; sourceTree = "<group>"; };
 		2583A4D12443FF6C002943A3 /* delete.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = delete.json; sourceTree = "<group>"; };
 		2583A4D724440593002943A3 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		2583A4DB24441FA2002943A3 /* PostsListPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListPresenterTest.swift; sourceTree = "<group>"; };
+		2583A4DD24442E95002943A3 /* PostsListInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListInteractorTest.swift; sourceTree = "<group>"; };
+		2583A4E124442F87002943A3 /* MockCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataManager.swift; sourceTree = "<group>"; };
+		2583A4E52444308C002943A3 /* MockPostsNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPostsNetworkManager.swift; sourceTree = "<group>"; };
+		2583A4E7244435D0002943A3 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 		2C1CAF1FE39BBD94A5BFB7B2 /* Pods-Posts AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Posts AppTests.release.xcconfig"; path = "Target Support Files/Pods-Posts AppTests/Pods-Posts AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		8AD4FA9D81E697817D15900B /* Pods_Posts_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Posts_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D106ECE7BF6CA3EFC06B617C /* Pods_Posts_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Posts_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,7 +211,9 @@
 		2550A52F243FB8840005549F /* Posts AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				2550A530243FB8840005549F /* Posts_AppTests.swift */,
+				2583A4D924441F00002943A3 /* Modules */,
+				2583A4DF24442F40002943A3 /* CoreData */,
+				2583A4E32444305F002943A3 /* MockNetworkManager */,
 				2550A532243FB8840005549F /* Info.plist */,
 			);
 			path = "Posts AppTests";
@@ -575,6 +585,48 @@
 			path = LottieAnimations;
 			sourceTree = "<group>";
 		};
+		2583A4D924441F00002943A3 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2583A4DA24441F0C002943A3 /* PostsList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2583A4DA24441F0C002943A3 /* PostsList */ = {
+			isa = PBXGroup;
+			children = (
+				2583A4DB24441FA2002943A3 /* PostsListPresenterTest.swift */,
+				2583A4DD24442E95002943A3 /* PostsListInteractorTest.swift */,
+			);
+			path = PostsList;
+			sourceTree = "<group>";
+		};
+		2583A4DF24442F40002943A3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2583A4E024442F49002943A3 /* MockManager */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		2583A4E024442F49002943A3 /* MockManager */ = {
+			isa = PBXGroup;
+			children = (
+				2583A4E124442F87002943A3 /* MockCoreDataManager.swift */,
+			);
+			path = MockManager;
+			sourceTree = "<group>";
+		};
+		2583A4E32444305F002943A3 /* MockNetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				2583A4E7244435D0002943A3 /* MockNetworkManager.swift */,
+				2583A4E52444308C002943A3 /* MockPostsNetworkManager.swift */,
+			);
+			path = MockNetworkManager;
+			sourceTree = "<group>";
+		};
 		780F52AC03955D0227B884AF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -821,7 +873,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2550A531243FB8840005549F /* Posts_AppTests.swift in Sources */,
+				2583A4E62444308C002943A3 /* MockPostsNetworkManager.swift in Sources */,
+				2583A4DE24442E95002943A3 /* PostsListInteractorTest.swift in Sources */,
+				2583A4E224442F87002943A3 /* MockCoreDataManager.swift in Sources */,
+				2583A4DC24441FA2002943A3 /* PostsListPresenterTest.swift in Sources */,
+				2583A4E8244435D0002943A3 /* MockNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

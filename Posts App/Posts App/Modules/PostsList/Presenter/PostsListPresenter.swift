@@ -50,6 +50,10 @@ extension PostsListPresenter: PostsListInteractorOutputProtocol {
     }
     
     func fetchedPostsFailure(errorMessage: String) {
-        
+        view?.showErrorAlert(errorMessage: errorMessage)
+    }
+    
+    func coreDataFailure(errorMessage: String) {
+        view?.showErrorAlert(errorMessage: errorMessage)
     }
 }

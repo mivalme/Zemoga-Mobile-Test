@@ -7,7 +7,9 @@
 */
 
 //MARK: - Posts List
-"PostList.title" = "Posts";
+"PostsList.title" = "Posts";
+"PostsList.errorAlertTitle" = "Error Alert";
+"PostsList.errorAlertButtonTitle" = "Continue";
 
 //MARK: - Post Detail
 "PostDetail.title" = "Post";
@@ -15,3 +17,5 @@
 "PostDetail.User.email" = "Email: %@";
 "PostDetail.User.phone" = "Phone: %@";
 "PostDetail.User.website" = "Website: %@";
+"PostDetail.errorAlertTitle" = "Error Alert";
+"PostDetail.errorAlertButtonTitle" = "Continue";

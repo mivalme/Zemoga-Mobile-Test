@@ -15,8 +15,10 @@ extension String {
 }
 
 struct LocalizableStrings {
-    struct PostList {
-        static var title: String { return "PostList.title".localizable }
+    struct PostsList {
+        static var title: String { return "PostsList.title".localizable }
+        static var errorAlertTitle: String { return "PostsList.errorAlertTitle".localizable }
+        static var errorAlertButtonTitle: String { return "PostsList.errorAlertTitle".localizable }
     }
     
     struct PostDetail {
@@ -28,5 +30,8 @@ struct LocalizableStrings {
             static var phone: String { return "PostDetail.User.phone".localizable }
             static var website: String { return "PostDetail.User.website".localizable }
         }
+        
+        static var errorAlertTitle: String { return "PostDetail.errorAlertTitle".localizable }
+        static var errorAlertButtonTitle: String { return "PostDetail.errorAlertTitle".localizable }
     }
 }

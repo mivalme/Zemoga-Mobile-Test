@@ -20,9 +20,11 @@ class PostsListViewController: BaseViewController {
     var postsListDataSource: [PostsListModel.Post]?
     let postCellHeight: CGFloat = 70
     let segmentedIndexFavorite = 1
+    let deleteAnimationName = "delete"
+    let loadingAnnimationName = "loading"
     
     lazy var deleteAnimationView: AnimationView = {
-        let view = AnimationView(name: "delete")
+        let view = AnimationView(name: deleteAnimationName)
         view.frame = self.view.frame
         view.isHidden = true
         self.view.addSubview(view)
@@ -30,7 +32,7 @@ class PostsListViewController: BaseViewController {
     }()
     
     lazy var loadingAnimationView: AnimationView = {
-        let view = AnimationView(name: "loading")
+        let view = AnimationView(name: loadingAnnimationName)
         view.frame = self.view.frame
         view.isHidden = true
         self.view.addSubview(view)
@@ -49,7 +51,7 @@ class PostsListViewController: BaseViewController {
     }
     
     private func setupUI() {
-        self.title = LocalizableStrings.PostList.title
+        self.title = LocalizableStrings.PostsList.title
         setupCustomSegmentedControl()
         addReloadButton()
         setUpTableView()
@@ -116,5 +118,12 @@ extension PostsListViewController: PostsListViewProtocol {
             self.postsListDataSource = model
         }
         self.postsTableView.reloadData()
+    }
+    
+    func showErrorAlert(errorMessage: String) {
+        let alert = UIAlertController(title: LocalizableStrings.PostsList.errorAlertTitle, message: errorMessage, preferredStyle: .alert)
+        let continueAction = UIAlertAction(title: LocalizableStrings.PostsList.errorAlertButtonTitle, style: .default, handler: nil)
+        alert.addAction(continueAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }

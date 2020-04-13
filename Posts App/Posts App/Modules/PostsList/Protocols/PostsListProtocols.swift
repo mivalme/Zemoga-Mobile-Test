@@ -27,6 +27,7 @@ protocol PostsListPresenterProtocol {
 protocol PostsListInteractorOutputProtocol: class {
     func fetchedPostsSuccess(model: [PostsListModel.Post])
     func fetchedPostsFailure(errorMessage: String)
+    func coreDataFailure(errorMessage: String)
 }
 
 protocol PostsListRouterProtocol {
@@ -35,4 +36,5 @@ protocol PostsListRouterProtocol {
 
 protocol PostsListViewProtocol: class {
     func displayPostsList(model: [PostsListModel.Post])
+    func showErrorAlert(errorMessage: String)
 }

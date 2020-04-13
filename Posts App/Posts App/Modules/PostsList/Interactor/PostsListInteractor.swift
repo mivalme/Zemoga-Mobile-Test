@@ -56,7 +56,7 @@ class PostsListInteractor: PostsListInteractorProtocol {
                     self?.presenter?.fetchedPostsSuccess(model: postsListModel)
                 }
             case .failure(let error):
-                print(error)
+                self?.presenter?.coreDataFailure(errorMessage: error.localizedDescription)
             }
         })
     }
@@ -65,25 +65,35 @@ class PostsListInteractor: PostsListInteractorProtocol {
         let postsModel = postsList.map({
             CoreDataModel.Post(userId: $0.userId, id: $0.id, title: $0.title, body: $0.body, read: $0.read, favorite: $0.favorite)
         })
-        coreDataManager?.savePostsList(postsModel: postsModel, completion: { (response) in
+        coreDataManager?.savePostsList(postsModel: postsModel, completion: { [weak self] (response) in
             switch response {
             case .success(_):
                 break
             case .failure(let error):
-                break
+                self?.presenter?.coreDataFailure(errorMessage: error.localizedDescription)
             }
         })
     }
     
     func deleteAllPostsCoreData() {
-        coreDataManager?.deleteAllPosts(completion: { (response) in
-            
+        coreDataManager?.deleteAllPosts(completion: { [weak self] (response) in
+            switch response {
+            case .success(_):
+                break
+            case .failure(let error):
+                self?.presenter?.coreDataFailure(errorMessage: error.localizedDescription)
+            }
         })
     }
     
     func deletePostCoreData(postId: Int) {
-        coreDataManager?.deletePost(postId: postId, completion: { (response) in
-            
+        coreDataManager?.deletePost(postId: postId, completion: { [weak self] (response) in
+            switch response {
+            case .success(_):
+                break
+            case .failure(let error):
+                self?.presenter?.coreDataFailure(errorMessage: error.localizedDescription)
+            }
         })
     }
 }
